@@ -15,6 +15,9 @@ public class ArraysPrep {
         ArraysPrep ap=new ArraysPrep();
         ap.printArrayPositions(cars);
         ap.assignArrayValues(cars);
+        ap.anonymousArray();
+        ap.sortArray(cars);
+        ap.twoDimensionalArray(new String[][]{{"Man","Woman"},{"Daughter","Son"}});
     }
 
     private void printArrayPositions(String[] arr){
@@ -22,7 +25,7 @@ public class ArraysPrep {
         System.out.println(arr[0]);//first element
         System.out.println(arr[1]);//second element
         System.out.println(arr[arr.length-1]);//last element
-        anonymousArray();
+        System.out.println(Arrays.toString(arr));
     }
 
     private void assignArrayValues(String[] arr){
@@ -31,6 +34,7 @@ public class ArraysPrep {
         arr[2]="Volkswagen";//sets the third array item value to Volkswagen
         arr[arr.length-1]="Mahindra";//sets the last array item value to Mahindra
         System.out.println(Arrays.toString(arr));//converts the array values into a printable string
+
     }
 
     /***
@@ -42,5 +46,21 @@ public class ArraysPrep {
         System.out.println(Arrays.toString(new String[10]));//prints [null,null,null....ten times]
         System.out.println(Arrays.toString(new String[0]));//prints []
         System.out.println(Arrays.toString(new String[]{"shisia","James","Peter","Paula"}));//prints [shisia,James,Peter,Paula]
+    }
+
+
+    private void sortArray(String[] arr){
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    private void twoDimensionalArray(String[][] arr){
+        System.out.println(Arrays.toString(arr[0]));//prints the first item in the array , that is the first array in the  2d array
+        System.out.println(Arrays.toString(arr[1]));//prints the second item in the array , that is the second array in the  2d array
+        System.out.println(arr[0][0]);//print first element of the first array (first element in the 2D array)
+        System.out.println(arr[1][0]);//prints first element of the second array (first element in the 2D array)
+        System.out.println(arr[0][1]);//prints second element of the first array (first element in the 2D array)
+        System.out.println(arr[1][1]);//prints second element of the second array (first element in the 2D array)
+        System.out.println(Arrays.toString(arr[0])+" "+Arrays.toString(arr[1]));
     }
 }
