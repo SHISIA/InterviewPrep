@@ -1,4 +1,4 @@
-package org.prep;
+package org.prep.ArraysExercise;
 
 
 import java.util.Arrays;
@@ -8,17 +8,6 @@ import java.util.Arrays;
  * @Definition: An array is a collection of items of the same object type called Data type
  * **/
 public class ArraysPrep {
-
-
-    public static void main(String[] args){
-        String[] cars={"Camaro","Corvette","BMW","Tesla","Fisker","Ford Mustang"};
-        ArraysPrep ap=new ArraysPrep();
-        ap.printArrayPositions(cars);
-        ap.assignArrayValues(cars);
-        ap.anonymousArray();
-        ap.sortArray(cars);
-        ap.twoDimensionalArray(new String[][]{{"Man","Woman"},{"Daughter","Son"}});
-    }
 
     private void printArrayPositions(String[] arr){
         System.out.println(arr.length); //length of the array
@@ -63,4 +52,53 @@ public class ArraysPrep {
         System.out.println(arr[1][1]);//prints second element of the second array (first element in the 2D array)
         System.out.println(Arrays.toString(arr[0])+" "+Arrays.toString(arr[1]));
     }
+
+    private void searchInArray(String[] arr, String target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals(target)) {
+                System.out.println("Found: " + target + " at index " + i);
+                break;
+
+            }
+            if (i == arr.length - 1) {
+                System.out.println("Cannot find " + target);
+            }
+
+
+        }
+    }
+
+
+    private void deleteItemFromArray(String[] arr, String target) {
+        for (int i = 0; i< arr.length; i++){
+            if(arr[i].equals(target)){
+                for (int j = i; j < arr.length - 1; j++) {
+                    arr[j] = arr[j+1];
+                }
+                arr[arr.length-1]=null;
+                break;
+            }
+
+        }
+    }
+
+    private void printArray(String[] arr){
+        for (String s : arr) {
+            System.out.print(s+" ");
+        }
+    }
+
+    public static void main(String[] args) {
+        String[] cars = {"Camaro", "Corvette", "BMW", "Tesla", "Fisker", "Ford Mustang"};
+        ArraysPrep ap = new ArraysPrep();
+//        ap.printArrayPositions(cars);
+//        ap.assignArrayValues(cars);
+//        ap.anonymousArray();
+//        ap.sortArray(cars);
+//        ap.twoDimensionalArray(new String[][]{{"Man","Woman"},{"Daughter","Son"}});
+        ap.searchInArray(cars, "Corvette");
+        ap.deleteItemFromArray(cars, "Corvette");
+        ap.printArray(cars);
+    }
+
 }
