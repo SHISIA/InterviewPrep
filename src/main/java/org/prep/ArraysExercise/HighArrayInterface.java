@@ -22,6 +22,34 @@ public class HighArrayInterface {
         return false;
     }
 
+
+    public long getMax(){
+        return a.length == 0 ? -1 : a[nElems-1];
+    }
+
+
+    public int findWithBinarySearch(long searchKey){
+        int low=0;
+        int high=a.length-1;
+
+        while(true){
+            int mid=low + (high-low)/2;
+
+            if (a[mid]==searchKey){
+                return mid;
+            } else if (a[mid] > searchKey) {
+                high=mid-1;
+            }else {
+                low=mid+1;
+            }
+
+            if (low>high){
+                return -1;
+            }
+
+        }
+    }
+
     public boolean insert(long value){
         if (a.length==nElems) {
             System.out.println("Array is full");

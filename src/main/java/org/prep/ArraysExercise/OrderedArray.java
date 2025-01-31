@@ -1,8 +1,8 @@
 package org.prep.ArraysExercise;
 
-public class HighArrayApp {
+public class OrderedArray {
     public static void main(String[] args) {
-        HighArrayInterface array=new HighArrayInterface(20);
+        HighArrayInterface array = new HighArrayInterface(20);
         array.insert(10);
         array.insert(20);
         array.insert(30);
@@ -17,6 +17,7 @@ public class HighArrayApp {
         array.insert(300);
 
         array.print();
-        System.out.println(array.getMax());
+
+        System.out.println(array.findWithBinarySearch(80));
     }
 }
