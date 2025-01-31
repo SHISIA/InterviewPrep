@@ -22,6 +22,13 @@ public class HighArrayInterface {
         return false;
     }
 
+    public long removeMax(){
+        long max=a[nElems-1];
+        a[nElems-1]=0;
+        nElems--;
+        return max;
+    }
+
 
     public long getMax(){
         return a.length == 0 ? -1 : a[nElems-1];
@@ -30,9 +37,9 @@ public class HighArrayInterface {
 
     public int findWithBinarySearch(long searchKey){
         int low=0;
-        int high=a.length-1;
+        int high=nElems-1;
 
-        while(true){
+        while(low <= high){
             int mid=low + (high-low)/2;
 
             if (a[mid]==searchKey){
@@ -42,12 +49,8 @@ public class HighArrayInterface {
             }else {
                 low=mid+1;
             }
-
-            if (low>high){
-                return -1;
-            }
-
         }
+        return -1;
     }
 
     public boolean insert(long value){

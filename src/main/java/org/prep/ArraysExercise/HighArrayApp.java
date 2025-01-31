@@ -1,5 +1,7 @@
 package org.prep.ArraysExercise;
 
+import java.util.Arrays;
+
 public class HighArrayApp {
     public static void main(String[] args) {
         HighArrayInterface array=new HighArrayInterface(20);
@@ -17,6 +19,13 @@ public class HighArrayApp {
         array.insert(300);
 
         array.print();
-        System.out.println(array.getMax());
+        System.out.println("Maximum element index is: "+array.findWithBinarySearch(array.getMax()));
+        long[] newArray = new long[20];
+        int len = array.findWithBinarySearch(array.getMax());
+        for (int i = 0; i <= len; i++) {
+            newArray[i] = array.removeMax();
+            System.out.println("Added : "+newArray[i]+" to the index : "+i);
+        }
+        System.out.println(Arrays.toString(newArray));
     }
 }

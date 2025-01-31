@@ -18,6 +18,6 @@ public class OrderedArray {
 
         array.print();
 
-        System.out.println(array.findWithBinarySearch(80));
+        System.out.println(array.findWithBinarySearch(200));
     }
 }
