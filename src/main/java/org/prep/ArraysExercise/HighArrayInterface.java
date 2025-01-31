@@ -22,6 +22,27 @@ public class HighArrayInterface {
         return false;
     }
 
+    public boolean findWithBinarySearchBoolean(long searchKey){
+        int low=0;
+        int high=nElems - 1;
+        while(true){
+            int mid = low + (high - low)/2;
+            if (low>high){
+                return false;
+            }
+            if (a[mid]==searchKey){
+                return true;
+            }else if(a[mid]>searchKey){
+                high=mid-1;
+            }else {
+                low=mid +1;
+            }
+        }
+    }
+
+
+
+
     public long removeMax(){
         long max=a[nElems-1];
         a[nElems-1]=0;
@@ -61,6 +82,33 @@ public class HighArrayInterface {
         a[nElems]=value;
         nElems++;
         return true;
+    }
+
+
+    public int insertWithBinarySearch(long value){
+        int low = 0;
+        int high = nElems - 1;
+        int targetIndex = 0;
+        while(low <= high){
+            int mid = low + (high-low)/2;
+            if(a[mid]>value){
+                high=mid-1;
+            } else if (a[mid]<value) {
+                low=mid+1;
+                targetIndex=low;
+            } else if (a[mid]==value) {
+                break;
+            }
+        }
+
+        for (int i = nElems; i > targetIndex; i--) {
+            a[i]=a[i-1];
+        }
+        a[targetIndex]=value;
+        nElems++;
+        System.out.println("Element inserted: "+value);
+        System.out.println("Target index: "+targetIndex);
+        return low;
     }
 
     public boolean delete(long value){
