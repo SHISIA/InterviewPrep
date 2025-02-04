@@ -111,6 +111,8 @@ public class HighArrayInterface {
         return low;
     }
 
+
+
     public boolean delete(long value){
         if (!find(value)) {
             return false;
@@ -127,6 +129,22 @@ public class HighArrayInterface {
         }
         return true;
     }
+
+
+    public void deleteByBinarySearch(long searchKey){
+        int targetIndex = findWithBinarySearch(searchKey);
+        if(targetIndex==-1){
+            System.out.println("Element not found");
+            return;
+        }
+        //shift elements to the empty space
+        for (int i = targetIndex; i < a.length-1; i++) {
+            a[i]=a[i+1];
+        }
+        nElems--;
+        print();
+    }
+
 
     public void print(){
         for (long i:a){

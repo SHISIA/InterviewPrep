@@ -18,7 +18,8 @@ public class OrderedArray {
 
         array.print();
 
-        array.insertWithBinarySearch(151);
-        array.print();
+        array.deleteByBinarySearch(70);
+        array.deleteByBinarySearch(80);
+        array.deleteByBinarySearch(1000);
     }
 }
