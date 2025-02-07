@@ -38,6 +38,20 @@ public class BubbleSort {
         display();
     }
 
+    void bubbleSortFast() {
+        boolean swapped;
+        for (int out = elements - 1; out > 1; out--) {
+            swapped = false;
+            for (int in = 0; in < out; in++) {
+                if (array[in] > array[in + 1]) {
+                    swap(in, in + 1);
+                    swapped = true;
+                }
+            }
+            if (!swapped) break; // Exit early if no swaps were made
+        }
+        display();
+    }
 
 
     private void swap(int a, int b){
@@ -54,7 +68,7 @@ public class BubbleSort {
         bubbleSort.insert(20);
         bubbleSort.insert(70);
         bubbleSort.insert(24);
-        bubbleSort.bubbleSort();
+        bubbleSort.bubbleSortFast();
 //        bubbleSort.display();
     }
 }
