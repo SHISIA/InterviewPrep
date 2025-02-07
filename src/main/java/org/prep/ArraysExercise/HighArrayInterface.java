@@ -152,4 +152,47 @@ public class HighArrayInterface {
         }
         System.out.println();
     }
+
+    public void merge(long[] arr1, long[] arr2){
+        long[] newArray=new long[arr1.length+arr2.length];
+        System.out.println(arr1.length+" "+arr2.length);
+        int totalElements=0;
+
+        for(int i=0;i<arr1.length;i++){
+            newArray[i]=arr1[i];
+            totalElements++;
+        }
+
+        for (long item : arr2) {
+            int position=itemOrReturnLow(newArray,item,totalElements);
+            if (position!=-1) {
+
+                for(int i=totalElements;i>position;i--){
+                    newArray[i]=newArray[i-1];
+                }
+                newArray[position]=item;
+                totalElements++;
+            }
+        }
+        for (long i:newArray) {
+            System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+
+    public int itemOrReturnLow(long[] newArray, long target, int totalElements){
+        int low=0;
+        int high=totalElements-1;
+        while (low <= high) {
+            int mid=low + (high-low)/2;
+            if(newArray[mid]<target){
+                low=mid+1;
+            }else if(newArray[mid]>target){
+                high=mid-1;
+            }else {
+                return -1;
+            }
+        }
+        return low;
+    }
 }

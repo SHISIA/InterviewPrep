@@ -18,8 +18,12 @@ public class OrderedArray {
 
         array.print();
 
-        array.deleteByBinarySearch(70);
-        array.deleteByBinarySearch(80);
-        array.deleteByBinarySearch(1000);
+//        array.deleteByBinarySearch(70);
+//        array.deleteByBinarySearch(80);
+//        array.deleteByBinarySearch(1000);
+//        System.out.println(array.itemOrReturnLow(new long[]{10, 20, 30, 40, 45, 50},60));
+        long[] arr1 = {2, 5, 8, 12, 16};   // Sorted array 1
+        long[] arr2 = {3, 6, 7, 10, 14, 18}; // Sorted array 2
+        array.merge(arr1, arr2);
     }
 }
