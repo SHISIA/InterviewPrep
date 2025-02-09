@@ -53,6 +53,7 @@ public class BubbleSort {
         display();
     }
 
+    /**Why is this faster? Because it avoids unnecessary iterations if the array is already sorted***/
     void bubbleSortFastFast() {
         boolean swapped;
         do{
