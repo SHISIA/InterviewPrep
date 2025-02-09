@@ -53,6 +53,20 @@ public class BubbleSort {
         display();
     }
 
+    void bubbleSortFastFast() {
+        boolean swapped;
+        do{
+            swapped=false;
+            for(int i=0;i<elements-1;i++){
+                if(array[i]>array[i+1]){
+                    swap(i,i+1);
+                    swapped=true;
+                }
+            }
+        }while (swapped);
+        display();
+    }
+
 
     private void swap(int a, int b){
         long temp=array[a];
@@ -68,7 +82,7 @@ public class BubbleSort {
         bubbleSort.insert(20);
         bubbleSort.insert(70);
         bubbleSort.insert(24);
-        bubbleSort.bubbleSortFast();
+        bubbleSort.bubbleSortFastFast();
 //        bubbleSort.display();
     }
 }
