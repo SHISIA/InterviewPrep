@@ -26,12 +26,25 @@ public class InsertionSort {
     }
 
     private void insertionSort() {
-         for (int i = 1; i < elements; i++) {
+        for (int i = 1; i < elements; i++) {
             long temp=array[i];
             int insertionIndex=i;
             while (insertionIndex>0 && array[insertionIndex-1]>=temp){
+                array[insertionIndex]=array[insertionIndex-1];
+                insertionIndex--;
+            }
+            array[insertionIndex]=temp;
+        }
+        display();
+    }
+
+    private void reverseInsertionSort() {
+         for (int i = 1; i < elements; i++) {
+            long temp=array[i];
+            int insertionIndex=i;
+            while (insertionIndex>0 && array[insertionIndex-1]<=temp){
                array[insertionIndex]=array[insertionIndex-1];
-              --insertionIndex;
+                insertionIndex--;
             }
             array[insertionIndex]=temp;
         }
@@ -52,6 +65,7 @@ public class InsertionSort {
         sort.insert(40);
         sort.insert(50);
         sort.insertionSort();
+        sort.reverseInsertionSort();
     }
 
 
