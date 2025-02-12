@@ -26,10 +26,9 @@ public class InsertionSort {
     }
 
     private void insertionSort() {
-        int insertionIndex;
-        for (int i = 1; i < elements; i++) {
+         for (int i = 1; i < elements; i++) {
             long temp=array[i];
-            insertionIndex=i;
+            int insertionIndex=i;
             while (insertionIndex>0 && array[insertionIndex-1]>=temp){
                array[insertionIndex]=array[insertionIndex-1];
               --insertionIndex;
